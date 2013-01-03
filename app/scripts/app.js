@@ -1,6 +1,6 @@
 'use strict';
 
-var EconomicsApp = angular.module('EconomicsApp', [])
+var EconomicsApp = angular.module('Economics', [])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
