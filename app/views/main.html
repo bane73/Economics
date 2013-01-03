@@ -1,5 +1,42 @@
-<div class="hero-unit">
-  <ul>
-      <li ng-repeat="line in lines">{{line.name}} - {{line.date | date:'yyyy.MM.dd'}} - {{line.amount | number:2}}</li>
-  </ul>
+
+<div ng-controller="MainCtrl">
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a href="#">Alle</a>
+            <table class="display">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="line in lines">
+                        <td>{{line.date | date:'yyyy.MM.dd'}}</td>
+                        <td>{{line.name}}</td>
+                        <td>{{line.amount | number:2}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>Totalt:</td>
+                        <td>{{total() | number:2}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </li>
+    </ul>
+
+	<form ng-submit="addLine()">
+		<select ng-model="Name">
+	    	<option ng-repeat="user in users" value="{{user}}">{{user}}</option>
+		</select>
+		&nbsp;
+		<input ng-model="Amount" type="number" autocomplete="on" />
+		<input ng-model="Date" type="date" value="{{Date}}" />
+		<br />
+		<input class="btn btn-primary" type="submit" value="Submit">
+	</form>
 </div>
