@@ -1,15 +1,22 @@
 'use strict';
 
 EconomicsApp.factory('firebase', function() {
-  // Service logic
-  // ...
+	// Service logic
+	// ...
+	var db = new Firebase('https://creative.firebaseio.com/stp_okonomi');
 
-  var meaningOfLife = 42;
+	var dbdata;
 
-  // Public API here
-  return {
-    someMethod: function() {
-      return meaningOfLife;
-    }
-  };
+	// Public API here
+	return {
+    	get: function()
+    	{
+    		return db.once('value', function(data)
+    		{
+        		dbdata = data.val();
+    		});
+      	
+      		return dbdata;
+    	}
+  	};
 });

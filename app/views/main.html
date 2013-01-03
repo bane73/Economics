@@ -1,9 +1,5 @@
 <div class="hero-unit">
-  <h1>Cheerio!</h1>
-  <p>You now have</p>
   <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+      <li ng-repeat="line in lines">{{line.name}} - {{line.date | date:'yyyy.MM.dd'}} - {{line.amount | number:2}}</li>
   </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
 </div>
