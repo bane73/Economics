@@ -10,6 +10,9 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="styles/main.css"/>
+        <link rel="stylesheet" href="styles/style.css"/>
+        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
 
     </head>
     <body ng-app="Economics">
@@ -28,12 +31,16 @@
         <div class="container" ng-view></div>
 
         <script src="scripts/vendor/angular.js"></script>
+        <script src="scripts/vendor/angular-resource.js"></script>
+        <script src="scripts/vendor/angular-locale_no.js"></script>
+        <script src="scripts/vendor/underscore.js"></script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/test.js"></script>
         <script src="scripts/services/firebase.js"></script>
+        <script src="scripts/directives/firebase.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
